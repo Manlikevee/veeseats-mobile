@@ -1,6 +1,21 @@
 # Veeseats
 
-![Veeseats Logo](https://your-logo-link-here)  
+![Veeseats Logo](https://veeseats.vercel.app/logo1.png) VEESEATS  
+
+
+Project: SOFTWARE FOR ENTERPRISE (University SQUARE)
+
+This project is developed as part of the individual assignment for the "Software for Enterprise" module at the University of Bedfordshire. 
+
+It demonstrates practical applications of core Computer Science concepts, including:
+
+- Version Control  
+- Event-Driven Programming  
+- Interoperability  
+- Virtual Identity  
+
+The code has been developed using a mainstream programming language (JavaScript / Python / Django / React / Next.js), with relevant examples and references acknowledged as required. This submission includes the supporting code and documentation needed for the video presentation component of the assignment. All work is my own unless explicitly referenced.
+
 
 Veeseats is a **next-gen job portal and recruitment platform** that leverages **AI** to streamline hiring for recruiters and personalize the job-seeking experience for candidates. Built with **React, Next.js, Django, and Python**, Veeseats supports mobile, web, and backend applications in one cohesive ecosystem.
 
