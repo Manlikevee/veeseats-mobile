@@ -4,12 +4,12 @@ import HorizontalCards from '@/components/ui/HorizontalCards'
 import InputComponent from '@/components/ui/InputComponent'
 import NotificationHeader from '@/components/ui/NotificationHeader'
 import RoleCard from '@/components/ui/RoleCard'
-import React from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import React, { useCallback, useState } from 'react'
+import { RefreshControl, ScrollView, StyleSheet, View } from 'react-native'
 
 const index = () => {
-  const [search , setSearch] = React.useState('')
-
+  const [search , setSearch] = React.useState(false);
+  const [refreshing, setRefreshing] = useState(false);
     const roles = [
     {
       logo: 'https://res.cloudinary.com/viktortech/image/upload/v1/media/organizations_images/CompanyAirbnb_kf1qq9',
@@ -30,13 +30,36 @@ const index = () => {
     // add more roles here
   ];
 
-
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+  
+    // if (userLocation?.city) {
+    //   console.log('refreshed', userLocation.city)
+    //   fetchPostings({ mylocation: userLocation?.city });
+    // }
+    // fetchUniquevisitors();
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  }, []);
 
   return (
     <ThemedView style={styles.container} lightColor='#f6f8f7' darkColor='#0f0f0f'>
             <ScrollView style={{flex:1, padding:12, gap:15, marginTop:5, flexDirection:'column'}}
             contentContainerStyle={{paddingBottom:20, gap:18}}
         showsVerticalScrollIndicator={false}
+
+      refreshControl={
+        <RefreshControl
+          refreshing={refreshing}
+          onRefresh={onRefresh}
+          colors={["#E57F06"]} // Use your primary color for the refresh indicator
+          tintColor={["#f0f"]} // iOS fallback color
+          // progressBackgroundColor="#E57F06" // Background color on Android
+        />
+      }
+
+
         >
   <NotificationHeader text='Dear User, Your free trial is ending soon!' />
 

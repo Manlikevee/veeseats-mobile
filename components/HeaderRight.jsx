@@ -11,7 +11,7 @@ export default function HeaderRight() {
   const theme = Colors[colorScheme ?? 'light'];
   const iconColor = colorScheme === 'dark' ? '#fff' : theme.text;
 
-  const notificationCount = 3;
+  const notificationCount = 6;
 
   return (
     <ThemedView style={styles.bg} lightColor="#f5f5f5d7" darkColor="#1c1c1cff">

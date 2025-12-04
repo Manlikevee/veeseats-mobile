@@ -18,16 +18,23 @@ export default function RoleCard({
       {/* Header */}
       <View style={styles.header}>
         <Image source={{ uri: logo }} style={styles.logo} />
-        <View style={styles.location}>
+        <ThemedView style={styles.locationflex} >
+    <View style={styles.location}>
           <MapPin size={14} color="#bd0b20" strokeWidth={1.5} />
           <ThemedText style={styles.locText} fontFamily='InstrumentSans_400Regular'  darkColor='#b1b1b1ff'>{location}</ThemedText>
         </View>
+
+              <View  style={styles.pill}>
+            <ThemedText fontSize={12}  lightColor='#a91f2f' fontFamily='InstrumentSans_400Regular' style={styles.pillText}>{service}</ThemedText>
+          </View>
+        </ThemedView>
+    
       </View>
 
       {/* Title */}
       <View style={styles.titleSection}>
         <ThemedText style={styles.title} lightColor='#1a1a1a' fontFamily='InstrumentSans_700Bold'>{title}</ThemedText>
-        <ThemedText style={styles.service} fontFamily='Nunito_600SemiBold' lightColor='#424243' darkColor='#f7f7f7ff' >{service}</ThemedText>
+        <ThemedText  style={styles.service} fontFamily='Nunito_600SemiBold' lightColor='#424243' darkColor='#f7f7f7ff' >{service}</ThemedText>
       </View>
 
       {/* Content */}
@@ -40,11 +47,13 @@ export default function RoleCard({
       {/* Footer / Pills */}
       <View style={styles.footer}>
         {skills.map((skill, index) => (
-          <View key={index} style={styles.pill}>
-            <ThemedText fontFamily='InstrumentSans_400Regular' style={styles.pillText}>{skill}</ThemedText>
-          </View>
+          <ThemedView key={index} style={styles.bottompill} lightColor='#f3f3f3' darkColor='#1a1a1aff' borderRadius={4} borderWidth={0.5} lightBorderColor='#e0e0e0ff' darkBorderColor='#2a2a2aff' >
+            <ThemedText fontSize={12.5} lightColor='#0c0c0c' fontFamily='InstrumentSans_400Regular' style={styles.pillText}>{skill}</ThemedText>
+          </ThemedView>
         ))}
       </View>
+
+       {/* <Bookmark strokeWidth={1.4} size={19} /> */}
     </ThemedView>
   );
 }
@@ -52,14 +61,14 @@ export default function RoleCard({
 const styles = StyleSheet.create({
   card: {
     flexDirection: 'column',
-    gap: 10,
+    gap: 5,
 
     padding: 15,
     borderRadius: 3,
     borderWidth: 0.5,
 
     width: '100%',
-    marginBottom: 19,
+    marginBottom: 7,
     marginTop: 7,
   },
   header: {
@@ -67,8 +76,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 60,
-    height: 40,
+    width: 80,
+    height: 30,
     resizeMode: 'contain',
     borderRadius: 6,
   },
@@ -77,6 +86,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 'auto',
     gap: 4,
+  },
+  locationflex:{
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginLeft: 'auto',
+    gap: 4,
+    backgroundColor:'transparent',
   },
   locText: {
     fontSize: 13,
@@ -94,7 +110,7 @@ const styles = StyleSheet.create({
    
   },
   service: {
-    fontSize: 15,
+    fontSize: 13.5,
     
       textTransform: 'capitalize',
   },
@@ -112,6 +128,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 8,
     marginTop: 8,
+    paddingBottom:7
   },
   pill: {
     backgroundColor: '#a91f2f33',
@@ -119,9 +136,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 4,
   },
+  bottompill:{
+    paddingVertical: 4,
+    paddingHorizontal: 7,
+    borderRadius: 4,
+  },
   pillText: {
-    color: '#a91f2f',
-        fontSize: 13,
-    lineHeight: 16,
+
+    
+    lineHeight: 13,
   },
 });
