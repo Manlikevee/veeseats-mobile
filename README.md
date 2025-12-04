@@ -15,6 +15,8 @@ Veeseats transforms traditional recruitment by integrating AI-driven features th
 
 By combining AI with a modern tech stack, Veeseats simplifies recruitment for both employers and candidates, creating a **future-ready hiring ecosystem**.
 
+
+
 ---
 
 ## ✨ Key Features
