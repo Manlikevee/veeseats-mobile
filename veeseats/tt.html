@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Image Uploader</title>
+    <style>
+        .json-output {
+            white-space: pre-wrap;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bulk Image Uploader</h1>
+    
+    <input type="file" id="imageUploader" multiple accept="image/*" />
+    <div id="jsonOutput" class="json-output"></div>
+
+    <script>
+        document.getElementById('imageUploader').addEventListener('change', function(event) {
+            const files = event.target.files;
+            const iconsArray = [];
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const imageName = file.name;
+                const imagePath = `/icons/${imageName}`;
+                
+                iconsArray.push({
+                    name: imageName,
+                    path: imagePath
+                });
+            }
+
+            // Display the JSON in the output div
+            const jsonOutput = document.getElementById('jsonOutput');
+            jsonOutput.textContent = JSON.stringify(iconsArray, null, 2);
+        });
+    </script>
+</body>
+</html>

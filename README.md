@@ -1,50 +1,91 @@
-# Welcome to your Expo app 👋
+# Veeseats
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Veeseats Logo](https://your-logo-link-here)  
 
-## Get started
+Veeseats is a **next-gen job portal and recruitment platform** that leverages **AI** to streamline hiring for recruiters and personalize the job-seeking experience for candidates. Built with **React, Next.js, Django, and Python**, Veeseats supports mobile, web, and backend applications in one cohesive ecosystem.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Project Overview
 
-2. Start the app
+Veeseats transforms traditional recruitment by integrating AI-driven features that improve **efficiency, accuracy, and user experience**:
 
-   ```bash
-   npx expo start
-   ```
+- **For Recruiters**: AI-generated job descriptions, automated candidate match validation, and real-time role notifications.  
+- **For Job Seekers**: Personalized job alerts, AI-assisted resume creation, and tailored interview prep questions.  
 
-In the output, you'll find options to open the app in a
+By combining AI with a modern tech stack, Veeseats simplifies recruitment for both employers and candidates, creating a **future-ready hiring ecosystem**.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ✨ Key Features
 
-## Get a fresh project
+- **AI-Generated Job Descriptions** powered by Gemini AI  
+- **Candidate Match Validation** with AI-powered insights  
+- **Real-Time Role Notifications** for recruiters and candidates  
+- **Personalized Job Alerts** for job seekers  
+- **AI-Assisted Resume Builder**  
+- **Tailored Interview Preparation Questions**  
+- **Mobile & Web Friendly** with responsive design  
 
-When you're ready, run:
+---
 
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend | React, Next.js, Expo (Mobile) |
+| Backend | Django, Python, Django REST Framework |
+| AI Integration | Gemini AI for job descriptions, application summarization, and candidate match insights |
+| Database | PostgreSQL / SQLite (configurable) |
+| Deployment | Vercel (Frontend), Heroku / Docker (Backend) |
+
+---
+
+## 📂 Repository Structure
+
+veeseats/
+├─ frontend-web/ # Next.js web application
+├─ frontend-mobile/ # React Native mobile app
+├─ backend/ # Django + DRF backend
+├─ docs/ # Documentation
+└─ README.md # Project overview
+
+
+---
+
+## ⚡ Getting Started
+
+### 1. Clone the Repository
 ```bash
-npm run reset-project
-```
+git clone https://github.com/yourusername/veeseats.git
+cd veeseats
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
+cd backend
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
-To learn more about developing your project with Expo, look at the following resources:
+# Apply migrations
+python manage.py migrate
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Create a superuser
+python manage.py createsuperuser
 
-## Join the community
+# Start the backend server
+python manage.py runserver
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+3. Web Frontend Setup (Next.js)
+cd ../frontend-web
+npm install
+npm run dev
+
+
+Open http://localhost:3000
+ to view the web app.
+
+4. Mobile Frontend Setup (React Native / Expo)
+cd ../frontend-mobile
+npm install
+npx expo start
