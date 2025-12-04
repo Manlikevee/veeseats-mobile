@@ -3,7 +3,7 @@
 ![Veeseats Logo](https://veeseats.vercel.app/logo1.png) VEESEATS  
 
 
-Project: SOFTWARE FOR ENTERPRISE (University SQUARE)
+Project FOR: SOFTWARE FOR ENTERPRISE (University Of Bedfordshire)
 
 This project is developed as part of the individual assignment for the "Software for Enterprise" module at the University of Bedfordshire. 
 
